@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────
+#  kenshinn_convertor .gitignore
+#  健診問診票（手書き）→ Excel 変換 / Python
+# ─────────────────────────────────────────────
+
+# === 🏥 患者情報（最重要・絶対にコミットしない） ===
+# 問診票スキャン・期待Excel・変換結果は実患者の自覚症状を含む
+samples/
+outputs/
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.xlsx
+*.xls
+*.csv
+# ↑ ただしテンプレ等を意図的に追跡したい場合は `git add -f` で個別追加
+
+# 出力テンプレ（患者データではない・追跡する）は除外を解除
+!templates/
+!templates/*.xlsx
+# Excel を開いている間のロックファイルは追跡しない
+templates/~$*
+
+# === 🔐 認証キー（クラウドOCRを使う場合） ===
+black-alpha-*.json
+*-credentials.json
+credentials*.json
+.env
+*.key
+
+# === ⚙ ローカル設定 ===
+settings.json
+Settings.json
+config.local.*
+
+# === 🐍 Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.python-version
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# === 🗂 作業領域・ログ ===
+data/
+log/
+logs/
+work/
+tmp/
+*.log
+*.tmp
+*.bak
+
+# === 🍎 macOS システム ===
+.DS_Store
+.AppleDouble
+Icon?
+
+# === 🛠 エディタ／IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === 🤖 Claude Code ローカル設定 ===
+.claude/

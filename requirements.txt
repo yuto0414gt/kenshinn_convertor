@@ -1,0 +1,5 @@
+# Phase 1（個人票の生成）で必須
+openpyxl>=3.1
+
+# 画像→値の抽出（run.py llm）で必要。要 ANTHROPIC_API_KEY
+anthropic>=0.69
